@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import img_accueil from "../../assets/man.jpg";
 import emp from "../../assets/laptop.jpg";
 import cv from "../../assets/cv.svg";
@@ -18,7 +19,14 @@ export default function Accueil() {
   return (
     <>
       <div className="flex gap-10 justify-center flex-no-wrap max-md:flex-wrap m-10 max-md:m-2">
-        <div className="w-[450px] bg-[#F2F1EC]  max-md:w-[400px] p-5 ">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 50 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: false, amount: 0.3 }}
+          className="w-[450px] bg-[#F2F1EC]  max-md:w-[400px] p-5 "
+        >
           <h1 id="accueil" className={h1}>
             Explorez votre Potentiel
           </h1>
@@ -30,13 +38,30 @@ export default function Accueil() {
             <br /> optimisez votre temps et rédiger des CV et lettres de
             motivation percutans
           </p>
-          <button  className="mt-5 text-xl bg-[#000] text-[#fff] p-4 w-[100%] rounded-4xl hover:bg-[#000]/90 duration-200">
-            <a  className="w-[100%] rounded-4xl duration-200" href="#blog">Découvrir</a>
+          <button className="mt-5 text-xl bg-[#000] text-[#fff] p-4 w-[100%] rounded-4xl hover:bg-[#000]/90 duration-200">
+            <a
+              className="
+            w-[100%] rounded-4xl duration-200"
+              href="#blog"
+            >
+              Découvrir
+            </a>
           </button>
-        </div>
-        <div className="m-5">
-          <img className="w-[900px] rounded-lg image" src={img_accueil} alt="" />
-        </div>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 50 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: false, amount: 0.3 }}
+          className="m-5"
+        >
+          <img
+            className="w-[900px] rounded-lg image"
+            src={img_accueil}
+            alt=""
+          />
+        </motion.div>
       </div>
       <div className="mb-10">
         <div>
@@ -45,7 +70,14 @@ export default function Accueil() {
           </h1>
         </div>
         <div className="flex flex-wrap justify-evenly">
-          <div className={div}>
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 50 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            viewport={{ once: false, amount: 0.3 }}
+            className={div}
+          >
             <div className={div_img}>
               <img className={img} src={emp} alt="Image description" />
             </div>
@@ -62,8 +94,15 @@ export default function Accueil() {
                 les étudiants de se démarquer sur me marché du travail.
               </p>
             </div>
-          </div>
-          <div className={div}>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 50 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            viewport={{ once: false, amount: 0.3 }}
+            className={div}
+          >
             <div className={div_img}>
               <img className={img} src={cv} alt="" />
             </div>
@@ -80,8 +119,15 @@ export default function Accueil() {
                 motivation bien rédigés sont essentiels pour se démarquer.
               </p>
             </div>
-          </div>
-          <div className={div}>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 50 }}
+            transition={{ duration: 1.5, ease: "easeOut" }}
+            viewport={{ once: false, amount: 0.3 }}
+            className={div}
+          >
             <div className={div_img}>
               <img className={img} src={recherche} alt="" />
             </div>
@@ -96,7 +142,7 @@ export default function Accueil() {
                 vous soyer au lycée, à l'université ou en formation continue.
               </p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
       <div>

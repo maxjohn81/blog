@@ -2,23 +2,43 @@ import { FaFacebook } from "react-icons/fa6";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { FaInstagramSquare } from "react-icons/fa";
 import { IoLogoLinkedin } from "react-icons/io5";
-
+import { motion } from "framer-motion";
 
 export default function Footer({ styl }) {
-
-
   return (
     <>
       <div className="bg-[#F2F1EC] flex justify-between flex-wrap">
         <div className="m-10 p-4 w-[550px]">
-          <h1 className={styl + " mb-50"}>
+          <motion.h1
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 50 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            viewport={{ once: false, amount: 0.3 }}
+            className={styl + " mb-50"}
+          >
             Conseils carrière et <br /> employabilité pour <br />
             étudiants
-          </h1>
-          <p id="contacts" className="font-bold duration-500">
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 50 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            viewport={{ once: false, amount: 0.3 }}
+            id="contacts"
+            className="font-bold"
+          >
             blog@gmail.com <br />
-          </p>
-          <div className="mt-2">
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 50 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            viewport={{ once: false, amount: 0.3 }}
+            className="mt-2"
+          >
             <ul className="flex gap-4 text-xl">
               <li>
                 <a href="">
@@ -41,9 +61,16 @@ export default function Footer({ styl }) {
                 </a>
               </li>
             </ul>
-          </div>
+          </motion.div>
         </div>
-        <div className="m-10 p-4 w-[550px]">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 50 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: false, amount: 0.3 }}
+          className="m-10 p-4 w-[550px]"
+        >
           <h2 className="text-4xl">Contacter-nous</h2>
           <br />
           <br />
@@ -71,7 +98,7 @@ export default function Footer({ styl }) {
             &copy; 2035 by conseils carrière et <br /> employabilité pout
             étudiants . <br />
           </p>
-        </div>
+        </motion.div>
       </div>
     </>
   );
