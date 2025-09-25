@@ -1,0 +1,33 @@
+html{
+    scroll-behavior: smooth;
+}
+
+
+/* @media screen and (max-width:668px) {
+    .pp{
+        position: fixed;
+        background: rgba(121, 120, 120, 0.881);
+    }
+    .nav{
+        position: absolute;
+        display: block;
+        top: 60px;
+        width: 100%;
+        background: rgba(121, 120, 120, 0.881);
+
+    }
+    #navbar{
+        display: list-item;
+        flex-direction: column;
+        width: 100%;
+        
+
+        li{
+            background: red;
+            margin-top: 15px;
+            width: 100%;
+            text-align: center;
+            border-radius: 5px;
+        }
+    }
+} */

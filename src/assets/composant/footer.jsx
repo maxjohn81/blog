@@ -1,0 +1,78 @@
+import { FaFacebook } from "react-icons/fa6";
+import { IoLogoWhatsapp } from "react-icons/io";
+import { FaInstagramSquare } from "react-icons/fa";
+import { IoLogoLinkedin } from "react-icons/io5";
+
+
+export default function Footer({ styl }) {
+
+
+  return (
+    <>
+      <div className="bg-[#F2F1EC] flex justify-between flex-wrap">
+        <div className="m-10 p-4 w-[550px]">
+          <h1 className={styl + " mb-50"}>
+            Conseils carrière et <br /> employabilité pour <br />
+            étudiants
+          </h1>
+          <p id="contacts" className="font-bold duration-500">
+            blog@gmail.com <br />
+          </p>
+          <div className="mt-2">
+            <ul className="flex gap-4 text-xl">
+              <li>
+                <a href="">
+                  <FaFacebook />
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <IoLogoWhatsapp />
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <FaInstagramSquare />
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <IoLogoLinkedin />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div className="m-10 p-4 w-[550px]">
+          <h2 className="text-4xl">Contacter-nous</h2>
+          <br />
+          <br />
+          <label>Email *</label>
+          <br />
+          <br />
+          <input className="w-[100%] h-[40px] border" type="text" />
+          <br />
+          <br />
+          <input type="checkbox" name="" id="" />
+          <label className="ml-5">
+            yes, subscribe me to your newsletter. *
+          </label>
+          <br />
+          <button className="mt-5 text-xl bg-[#000] text-[#fff] p-4 w-[100%] hover:bg-[#000]/90 duration-200">
+            Subscribe
+          </button>
+          <p className="underline mt-15 mb-15">
+            Politique de confidentialité <br />
+            Déclaration d'accessibilité <br />
+            Condition générales <br />
+            Politique de remboursement
+          </p>
+          <p>
+            &copy; 2035 by conseils carrière et <br /> employabilité pout
+            étudiants . <br />
+          </p>
+        </div>
+      </div>
+    </>
+  );
+}

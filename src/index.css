@@ -1,0 +1,21 @@
+.image:hover{
+    animation: rotation 0.5s;
+}
+
+@keyframes rotation {
+    0%{
+        transform: rotate(2deg);
+    }
+    30%{
+        transform: rotate(-2deg);
+    }
+    60%{
+        transform: rotate(2deg);
+    }
+    90%{
+        transform: rotate(-2deg);
+    }
+    100%{
+        transform: rotate(2deg);
+    }
+}
