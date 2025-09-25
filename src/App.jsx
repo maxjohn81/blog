@@ -1,8 +1,12 @@
 import { useState } from "react";
 import "./App.css";
 import Accueil from "./assets/composant/accueil";
+import { FiMenu } from "react-icons/fi";
+import { IoMdClose } from "react-icons/io";
+import { FaShoppingCart } from "react-icons/fa";
 
-let a ="border w-sm rounded-sm h-[35px] items-center flex justify-center font-bold hover:bg-gray-200 duration-300"
+const linkClass =
+  "border w-sm rounded-sm h-[35px] flex items-center justify-center font-bold hover:bg-gray-200 duration-300";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false); // état pour menu mobile
@@ -15,56 +19,42 @@ function App() {
             Conseils carrière et <br /> employabilité pour étudiants
           </p>
         </div>
-        <nav id="nav" className="nav max-md:hidden">
-          <ul id="navbar" className="flex gap-6">
-            <li>
-              <a href="#accueil">Accueil</a>
-            </li>
-            <li>
-              <a href="#services">Services</a>
-            </li>
-            <li>
-              <a href="#blog">Flux de blog</a>
-            </li>
-            <li>
-              <a href="#propos">A propos</a>
-            </li>
-            <li>
-              <a href="#contacts">Contacts</a>
-            </li>
+
+        {/* Navbar desktop */}
+        <nav className="nav max-md:hidden">
+          <ul className="flex gap-6">
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#blog">Flux de blog</a></li>
+            <li><a href="#propos">A propos</a></li>
+            <li><a href="#contacts">Contacts</a></li>
           </ul>
         </nav>
+
+        {/* Icone panier */}
         <div>
           <a href="#services">
-            <ion-icon name="cart-outline"></ion-icon>
+            <FaShoppingCart size={20} />
           </a>
         </div>
+
+        {/* Menu mobile */}
         <div className="mm md:hidden">
           <button onClick={() => setIsOpen(!isOpen)}>
-            <ion-icon
-              name={isOpen ? "close-outline" : "menu-outline"}
-            ></ion-icon>
+            {isOpen ? <IoMdClose size={24} /> : <FiMenu size={24} />}
           </button>
         </div>
       </div>
+
+      {/* Menu mobile déroulant */}
       {isOpen && (
         <div className="md:hidden bg-gray-100 gap-2 p-4 flex justify-center items-center duration-100">
           <div className="flex flex-col gap-5 text-center">
-            <a className={a} href="#accueil" onClick={() => setIsOpen(false)}>
-              Accueil
-            </a>
-            <a className={a} href="#services" onClick={() => setIsOpen(false)}>
-              Services
-            </a>
-            <a className={a} href="#blog" onClick={() => setIsOpen(false)}>
-              Flux de blog
-            </a>
-            <a className={a} href="#propos" onClick={() => setIsOpen(false)}>
-              À propos
-            </a>
-            <a className={a} href="#contacts" onClick={() => setIsOpen(false)}>
-              Contacts
-            </a>
+            <a className={linkClass} href="#accueil" onClick={() => setIsOpen(false)}>Accueil</a>
+            <a className={linkClass} href="#services" onClick={() => setIsOpen(false)}>Services</a>
+            <a className={linkClass} href="#blog" onClick={() => setIsOpen(false)}>Flux de blog</a>
+            <a className={linkClass} href="#propos" onClick={() => setIsOpen(false)}>À propos</a>
+            <a className={linkClass} href="#contacts" onClick={() => setIsOpen(false)}>Contacts</a>
           </div>
         </div>
       )}
