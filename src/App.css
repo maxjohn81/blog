@@ -1,33 +1,22 @@
-html{
+html {
     scroll-behavior: smooth;
 }
 
+.bouton {
+    animation: bg infinite 3s;
+}
 
-/* @media screen and (max-width:668px) {
-    .pp{
-        position: fixed;
-        background: rgba(121, 120, 120, 0.881);
+@keyframes bg {
+    0%{
+        transform: scale(1);
+        box-shadow: 0 0 10px #3a3939;
     }
-    .nav{
-        position: absolute;
-        display: block;
-        top: 60px;
-        width: 100%;
-        background: rgba(121, 120, 120, 0.881);
-
+    50%{
+        transform: scale(1.2);
+        box-shadow: 0 0 25px #3a3939;
     }
-    #navbar{
-        display: list-item;
-        flex-direction: column;
-        width: 100%;
-        
-
-        li{
-            background: red;
-            margin-top: 15px;
-            width: 100%;
-            text-align: center;
-            border-radius: 5px;
-        }
+    100%{
+        transform: scale(1);
+        box-shadow: 0 0 10px #3a3939;
     }
-} */
+}

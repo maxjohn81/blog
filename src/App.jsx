@@ -5,6 +5,7 @@ import { FiMenu } from "react-icons/fi";
 import { IoMdClose } from "react-icons/io";
 import { FaShoppingCart } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { AiOutlineUp } from "react-icons/ai";
 
 const linkClass =
   "border w-sm rounded-sm h-[35px] flex items-center justify-center font-bold hover:bg-gray-200 duration-300";
@@ -16,12 +17,10 @@ function App() {
     <>
       <div className="pp w-full flex justify-between p-2 items-center z-10 bg-white shadow-md">
         <div>
-          <p className="font-bold">
+          <p id="haut" className="font-bold">
             Conseils carrière et <br /> employabilité pour étudiants
           </p>
         </div>
-
-        {/* Navbar desktop */}
         <nav className="nav max-md:hidden">
           <ul className="flex gap-6">
             <li>
@@ -41,23 +40,21 @@ function App() {
             </li>
           </ul>
         </nav>
-
-        {/* Icone panier */}
         <div>
           <a href="#services">
             <FaShoppingCart size={20} />
           </a>
         </div>
 
-        {/* Menu mobile */}
         <div className="mm md:hidden">
           <button onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <IoMdClose size={24} /> : <FiMenu size={24} />}
           </button>
         </div>
       </div>
-
-      {/* Menu mobile déroulant */}
+      <div className="bouton fixed bottom-25 right-10 z-10 bg-[#000] p-3 rounded-[50%] text-[#fff] text-xl md:hidden">
+       <a className="w-[100%] h-[100%] bg-red-700" href="#haut"> <AiOutlineUp /></a>
+      </div>
       {isOpen && (
         <motion.div
           initial={{ opacity: 0, y: 50 }}
